@@ -45,6 +45,11 @@ Siprifi Finance will inherit many of Aave's core features, including its over-co
 *   **Price Oracles:** Robust and reliable price feeds are paramount. We will integrate with leading oracle providers capable of accurately pricing these often volatile and binary-outcome-approaching shares. The price of a share (e.g., a "YES" share trading at $0.30) will determine its collateral value.
 *   **Standard Lending Operations:** Users will be able to deposit their eligible shares, see their collateral value, and borrow other assets based on the assigned LTV for that share type. Interest rates will be determined by supply and demand dynamics within Siprifi Finance's lending pools.
 
+To visualize how the protocol "quarantines" dominant risks to maintain solvency:
+
+![Figure 2: Siprifi Risk Engine & Concentration Offset Logic](../../assets/ConcentrationLogic.svg)
+
+> **Note:** The subtraction of the N-largest groups ensures that even a 100% loss in a primary position does not trigger bad debt.
 ---
 
 **4. The Siprifi Innovation: Diversification Requirement**

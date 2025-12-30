@@ -100,7 +100,6 @@ siprifi/
 │   └── references/
 │       ├── glossary.md
 │       └── related_work.md
-├── contracts/
 ├── diagrams/
 └── assets/
 ```

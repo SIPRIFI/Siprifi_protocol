@@ -32,6 +32,9 @@ Siprifi Finance is a decentralized lending protocol designed to address the capi
 
 Our vision is to create a synergistic relationship: Siprifi Finance will draw strength from the growing prediction market ecosystem, and in turn, fuel its expansion by providing much-needed capital efficiency.
 
+### Market Operational Workflow
+Below is the technical lifecycle of the risk markets that generate the collateral for the Siprifi protocol:
+![Market Lifecycle and Use Cases](./assets/workflow.svg)
 ---
 
 **3. Core Mechanics: Adapting Aave for Prediction Market Shares**

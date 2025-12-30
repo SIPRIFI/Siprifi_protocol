@@ -135,9 +135,4 @@ This whitepaper is for informational purposes only and does not constitute an of
 > *Proprietary Document - Copyright © 2025 Siprifi*
 > All intellectual property rights in this document, including but not limited to text, images, diagrams, formulas (specifically the "Siprifi Risk Engine" and "Effective Borrowing Power" logic), and overall conceptual architecture, are the exclusive property of **Siprifi**. 
 
-**1. Limited Public Viewing:** This document is made available for informational purposes only. Access to this document does not grant, by implication or otherwise, any license or right to use, copy, or distribute the contents without express written permission from Siprifi.
 
-**2. Prohibited Uses:** No part of this publication may be reproduced, redistributed, or transmitted in any form or by any means, including electronic, mechanical, or photocopying, for any commercial or public purpose. Unauthorized use of this material may result in legal action under applicable copyright and intellectual property laws.
-
-**3. No Grant of License:** Nothing in this document shall be construed as granting any license or right under any patent, trademark, or copyright of Siprifi or any third party.
----

@@ -62,7 +62,7 @@ The repository is organized into conceptual, technical, and economic documents:
   Formal specification of protocol mechanics, risk parameters, and liquidation logic.
 
 - **Siprifi Thesis**  
-  `docs/vision/siprifi_thesis.md`  
+  `docs/vision/siprifi_thesis.pdf`  
   Conceptual and economic rationale for market-based protection systems.
 
 - **Protocol Overview**  

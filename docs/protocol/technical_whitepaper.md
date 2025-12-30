@@ -34,7 +34,7 @@ Our vision is to create a synergistic relationship: Siprifi Finance will draw st
 
 ### Market Operational Workflow
 Below is the technical lifecycle of the risk markets that generate the collateral for the Siprifi protocol:
-![Market Lifecycle and Use Cases](./assets/workflow.svg)
+![Market Lifecycle and Use Cases](/assets/workflow.svg)
 ---
 
 **3. Core Mechanics: Adapting Aave for Prediction Market Shares**

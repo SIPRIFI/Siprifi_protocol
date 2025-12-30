@@ -44,12 +44,6 @@ Siprifi Finance will inherit many of Aave's core features, including its over-co
 *   **Collateral Eligibility:** Initially, Siprifi Finance will accept Yes/No shares from established prediction markets (e.g., Polymarket) for events with clear, objectively verifiable outcomes. Governance will play a key role in whitelisting eligible markets and share types.
 *   **Price Oracles:** Robust and reliable price feeds are paramount. We will integrate with leading oracle providers capable of accurately pricing these often volatile and binary-outcome-approaching shares. The price of a share (e.g., a "YES" share trading at $0.30) will determine its collateral value.
 *   **Standard Lending Operations:** Users will be able to deposit their eligible shares, see their collateral value, and borrow other assets based on the assigned LTV for that share type. Interest rates will be determined by supply and demand dynamics within Siprifi Finance's lending pools.
-
-To visualize how the protocol "quarantines" dominant risks to maintain solvency:
-
-![Figure 2: Siprifi Risk Engine & Concentration Offset Logic](../../assets/ConcentrationLogic.svg)
-
-> **Note:** The subtraction of the N-largest groups ensures that even a 100% loss in a primary position does not trigger bad debt.
 ---
 
 **4. The Siprifi Innovation: Diversification Requirement**
@@ -73,6 +67,12 @@ Where:
 1.  **Protecting Protocol Solvency:** This rule directly mitigates the risk of bad debt arising from a user's largest, most concentrated positions resolving unfavorably and their collateral value plummeting to zero. By preemptively reducing borrowing power based on these concentrated risks, the protocol maintains a larger safety margin.
 2.  **Incentivizing True Diversification:** Users are strongly incentivized to diversify their collateral across genuinely uncorrelated prediction market events. Concentrating collateral in a few large positions or in a set of correlated positions will directly and significantly reduce their borrowing capacity. To maximize borrowing power, users must spread their risk.
 3.  **Adaptable Risk Management:** Governance can adjust "N" and the definitions of "Correlated Asset Groups" to respond to evolving market conditions and risk assessments.
+
+To visualize how the protocol handle dominant risks to maintain solvency:
+
+![Figure 2: Siprifi Risk Engine & Concentration Offset Logic](../../assets/ConcentrationLogic.svg)
+
+> **Note:** The subtraction of the N-largest groups ensures that even a 100% loss in a primary position does not trigger bad debt.
 
 **Example:**
 A user deposits various prediction market shares. Aave's algorithm might calculate a total borrowing power of $10,000. If "N" is set to 1, and the user's largest single (or correlated group) collateral position has a market value of $3,000, their Effective Borrowing Power on Siprifi Finance becomes $10,000 - $3,000 = $7,000. If their two largest (N=2) positions/groups were valued at $3,000 and $2,000, their borrowing power would be $10,000 - ($3,000 + $2,000) = $5,000.

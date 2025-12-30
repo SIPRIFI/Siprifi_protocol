@@ -1,5 +1,6 @@
 <p align="center">
-  <img src="assets/siprifi-logo.png" alt="Siprifi Logo" width="200">
+  <img src="assets/siprifi-logo.png" alt="Siprifi Logo" width="600
+    ">
 </p>
 
 # Siprifi Finance
@@ -99,7 +100,6 @@ siprifi/
 │   └── references/
 │       ├── glossary.md
 │       └── related_work.md
-├── contracts/
 ├── diagrams/
 └── assets/
 ```

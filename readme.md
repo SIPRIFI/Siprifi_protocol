@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/siprifi-logo.png" alt="Siprifi Logo" width="200">
+</p>
+
 # Siprifi Finance
 
 Siprifi Finance is a decentralized protocol that turns prediction market outcome shares into productive collateral, enabling capital-efficient protection markets and reusable liquidity.

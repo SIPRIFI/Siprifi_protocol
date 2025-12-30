@@ -117,4 +117,15 @@ This repository does not constitute an offer, solicitation, or financial advice.
 
 ## License
 
-(Add license information here)
+Copyright (c) 2025 Siprifi. All rights reserved.
+
+This software and its associated documentation (the "Work") are the exclusive intellectual property of Siprifi. 
+
+Access to this repository is granted for viewing and informational purposes only. No license is granted for:
+1. Modification, reproduction, or redistribution of the Work.
+2. Commercial use or use in secondary projects.
+3. Creation of derivative works based on the unique formulas, diagrams, or logic contained herein.
+
+Any unauthorized use, including but not limited to the use of the "Siprifi Risk Engine" or "Effective Borrowing Power" logic in other protocols, may result in legal action. 
+
+For inquiries regarding commercial licensing or permissions, please contact: siprifinance@gmail.com 

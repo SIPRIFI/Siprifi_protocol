@@ -42,6 +42,7 @@ Below is the technical lifecycle of the risk markets that generate the collatera
 Siprifi Finance will inherit many of Aave's core features, including its over-collateralized lending model, Loan-to-Value (LTV) ratios, liquidation thresholds, and Health Factor calculations. However, specific adaptations are necessary for prediction market shares:
 
 *   **Collateral Eligibility:** Initially, Siprifi Finance will accept Yes/No shares from established prediction markets (e.g., Polymarket) for events with clear, objectively verifiable outcomes. Governance will play a key role in whitelisting eligible markets and share types.
+  ![SiprifiV2vsOTCderivatives](../../assets/SiprifiV2_model.svg)
 *   **Price Oracles:** Robust and reliable price feeds are paramount. We will integrate with leading oracle providers capable of accurately pricing these often volatile and binary-outcome-approaching shares. The price of a share (e.g., a "YES" share trading at $0.30) will determine its collateral value.
 *   **Standard Lending Operations:** Users will be able to deposit their eligible shares, see their collateral value, and borrow other assets based on the assigned LTV for that share type. Interest rates will be determined by supply and demand dynamics within Siprifi Finance's lending pools.
 ---

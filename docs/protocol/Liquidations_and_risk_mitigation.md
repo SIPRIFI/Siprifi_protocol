@@ -41,7 +41,7 @@ As a prediction market approaches its "expiry" (resolution), the protocol mitiga
 * **LTV Decay**: As the resolution date nears, the protocol may reduce the LTV for those shares to prevent new high-leverage positions from being opened on a "cliff" event.
 * **Automated Settlement**: Winning shares are automatically redeemable for the underlying assets, ensuring that liquidators and lenders are made whole immediately upon event resolution.
 
-![Risk farming loop](../../assets/risk-FarmingLoop.svg)
+![Risk farming loop](../../assets/Risk-Farmingloop.svg)
 
 ---
 

@@ -1,4 +1,9 @@
 
+<p align="center">
+  <img src="assets/siprifi-logo.png" alt="Siprifi Logo" width="600
+    ">
+</p>
+
 **Whitepaper V2.0**
 **Date: Dec 30, 2025**
 

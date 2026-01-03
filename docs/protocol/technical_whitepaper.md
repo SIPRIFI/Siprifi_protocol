@@ -98,7 +98,7 @@ Beyond the innovative borrowing power adjustment, Siprifi Finance will employ a 
 
 **6. Governance**
 
-Siprifi Finance will be governed by its native token holders ([TokenSymbol], if applicable, or a DAO structure). Governance will be responsible for:
+Siprifi Finance will be governed by its native token holders. Governance will be responsible for:
 
 *   Whitelisting eligible prediction markets and share types for collateralization.
 *   Setting and adjusting risk parameters (LTVs, liquidation thresholds, "N").

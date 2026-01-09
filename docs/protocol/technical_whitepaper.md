@@ -81,7 +81,7 @@ To visualize how the protocol handle dominant risks to maintain solvency:
 > **Note:** The subtraction of the N-largest groups ensures that even a 100% loss in a primary position does not trigger bad debt.
 
 **Example:**
-A user deposits various prediction market shares. Aave's algorithm might calculate a total borrowing power of $10,000. If "N" is set to 1, and the user's largest single (or correlated group) collateral position has a market value of $3,000, their Effective Borrowing Power on Siprifi Finance becomes $10,000 - $3,000 = $7,000. If their two largest (N=2) positions/groups were valued at $3,000 and $2,000, their borrowing power would be $10,000 - ($3,000 + $2,000) = $5,000.
+A user deposits various prediction market shares. If the portfolio's total market value is $10,000 and the LTV is 50%, the algorithm calculates a Base Borrowing Power of $5,000. If "N" is set to 1, and the user's largest single (or correlated group) collateral position has a market value of $5,000, their Effective Borrowing Power on Siprifi Finance becomes $5,000 - $5,000 = $0. If their two largest (N=2) positions/groups were valued at $2,000 and $1,500, their borrowing power would be $5,000 - ($2,000 + $1,500) = $1,500.
 
 ---
 

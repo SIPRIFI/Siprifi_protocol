@@ -89,6 +89,7 @@ siprifi/
 │   │   ├── protocol_overview.md
 │   │   ├── technical_whitepaper.md
 │   │   ├── risk_management.md
+|   |   |──  Architecture_SmartContractV2_MVP.md
 │   │   └── liquidation_and_oracles.md
 │   ├── economics/
 │   │   ├── protection_markets.md

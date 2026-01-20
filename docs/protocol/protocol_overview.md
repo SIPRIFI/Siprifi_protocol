@@ -4,66 +4,192 @@
     ">
 </p>
 
-# Protocol Overview: Siprifi Finance
+# Formal System Model and Binary Asset Solvency Buffer (BASB)
 
-## 1. Executive Summary
-[cite_start]Siprifi Finance is a decentralized protocol designed to solve the structural liquidity failures of traditional protection markets, such as Credit Default Swaps (CDS) and insurance derivatives[cite: 5, 27]. [cite_start]While traditional OTC markets rely on static, bilateral contracts that lock capital for long durations, Siprifi re-architects risk into continuously tradable YES/NO primitives[cite: 29, 57, 67]. [cite_start]By integrating a lending layer with a proprietary risk engine, Siprifi enables protection issuers to collateralize their positions, unlocking capital efficiency that is impossible in legacy financial systems[cite: 18, 80].
-
----
-
-## 2. From Static Contracts to Marketized Risk
-[cite_start]Siprifi moves away from "one-sided" insurance models where liquidity disappears during periods of stress[cite: 34, 55].
-
-* **Tradable Primitives**: Protection is represented by binary outcome shares. [cite_start]A "NO" share represents the non-occurrence of an adverse event and serves as the primary instrument for protection issuers[cite: 68, 71].
-* [cite_start]**Continuous Price Discovery**: Unlike OTC derivatives that lack transparency, Siprifi shares are marked-to-market and freely transferable, attracting speculators who provide liquidity when hedgers retreat[cite: 48, 63, 75].
-* [cite_start]**Two-Sided Markets**: By embracing speculation as a stabilizing force, the protocol ensures markets remain functional even during volatile "death spiral" conditions that typically freeze traditional markets[cite: 41, 62, 86].
-
-
+This section presents the formal mathematical specification of the Siprifi Finance protocol. Siprifi inherits the core collateralization, liquidation, and accounting mechanics of Aave V3, and introduces an additional solvency layer specifically designed for binary, highly correlatable assets such as prediction market outcome shares.
 
 ---
 
-## 3. The Siprifi Risk Engine: Effective Borrowing Power (EBP)
-[cite_start]The protocol’s core innovation is its ability to treat "illiquid" risk as productive collateral without risking protocol solvency[cite: 9, 81].
+## 1. Collateral and Debt Definitions
 
-### The Concentration Offset Logic
-Because binary outcomes (YES/NO) can drop to zero, Siprifi employs a conservative borrowing power adjustment.
+Let \( I \) be the set of collateral assets and \( J \) the set of borrowed assets.
 
-**The Formula:**
-`EffectiveBorrowingPower = BaseBorrowingPower - Sum(MarketValueOf_N_LargestCollateralGroups)`
+For each collateral asset \( i \in I \):
 
-* **Solvency Buffer**: The protocol subtracts the value of the $N$ largest risk exposures from a user's total borrowing capacity.
-* **Diversification Incentive**: This formula mathematically forces protection issuers to diversify their underwriting across uncorrelated risks to maximize their liquidity.
-* **Correlated Risk Groups**: Governance defines "Risk Groups" (e.g., systemic financial failures or related credit events) to ensure that highly correlated assets are treated as a single concentrated exposure.
+- \( C_i \in \mathbb{R}_{+} \): quantity of collateral  
+- \( P_i \in \mathbb{R}_{+} \): oracle price (USD)  
+- \( LTV_i \in (0,1) \): loan-to-value parameter  
+- \( LT_i \in (0,1] \): liquidation threshold  
 
----
+Total collateral market value:
+\[
+V_C = \sum_{i \in I} C_i \cdot P_i
+\]
 
-## 4. Capital Efficiency Workflow
+Liquidation-adjusted collateral value:
+\[
+V_C^{liq} = \sum_{i \in I} C_i \cdot P_i \cdot LT_i
+\]
 
-### 1. Risk Underwriting (Issuance)
-[cite_start]An issuer provides protection by acquiring **NO shares** for a specific credit or adverse event[cite: 71]. [cite_start]Instead of capital sitting idle in escrow, the issuer holds a mark-to-market position[cite: 31, 72].
+For each borrowed asset \( j \in J \):
 
-### 2. Collateralization
-[cite_start]The issuer deposits these NO shares into the Siprifi lending pool[cite: 80]. The protocol calculates the EBP based on the current market price of the risk.
+- \( D_j \in \mathbb{R}_{+} \): borrowed quantity  
+- \( P_j^{debt} \in \mathbb{R}_{+} \): oracle price  
 
-### 3. Liquidity Redeployment
-[cite_start]The issuer borrows stablecoins against their underwriting positions to issue *new* protection contracts or participate in other DeFi markets, significantly increasing capital velocity[cite: 81, 82].
-
----
-
-## 5. Crisis Resilience & Settlement
-[cite_start]Siprifi is designed to remain active when traditional protection sellers disappear[cite: 85, 92].
-
-* **Liquidity Persistence**: Fear becomes a source of liquidity. [cite_start]As risk rises, the widening spreads and volatility attract arbitrageurs and traders[cite: 86, 87].
-* **Automated Liquidation**: Oracles track the real-time probability of the adverse event. If the probability of a "YES" outcome rises sharply, under-collateralized "NO" positions are liquidated to protect lenders.
-* **Settlement**: Upon event resolution, winning shares are redeemed for the underlying assets, and debt is settled programmatically, removing the need for manual claims processing or bilateral trust.
+Total debt value:
+\[
+V_D = \sum_{j \in J} D_j \cdot P_j^{debt}
+\]
 
 ---
 
-## 6. Governance & Risk Controls
-The DAO manages the "Risk Parameters" that safeguard the protocol:
-* **Asset Whitelisting**: Onboarding new risk primitives and credit events.
-* [cite_start]**Correlation Mapping**: Identifying systemic links between different protection markets[cite: 89].
-* **LTV & N-Value**: Adjusting the number of subtracted groups ($N$) based on global market volatility.
+## 2. Health Factor and Liquidation Condition
+
+The Health Factor (HF) is defined as:
+\[
+HF = \frac{V_C^{liq}}{V_D}
+\]
+
+A position is solvent if \( HF \geq 1 \) and liquidatable if \( HF < 1 \).
+
+This condition is identical to the Aave protocol and remains unchanged.
 
 ---
-*Copyright © 2025 Siprifi. All rights reserved. Logic protected under Siprifi Risk Engine Intellectual Property.*
+
+## 3. Base Borrowing Power
+
+Base Borrowing Power (BBP) is computed using loan-to-value parameters:
+\[
+BBP = \sum_{i \in I} C_i \cdot P_i \cdot LTV_i
+\]
+
+BBP represents the maximum debt allowed in the absence of Siprifi-specific risk constraints.
+
+---
+
+## 4. Collateral Grouping Structure
+
+Collateral assets are partitioned into disjoint groups \( g \subset I \), such that:
+\[
+\bigcup g = I, \quad g_a \cap g_b = \varnothing \ \text{for} \ a \neq b
+\]
+
+Each group corresponds to:
+- a single prediction market, or  
+- a governance-defined correlated set of markets  
+
+For each group \( g \), define its market value:
+\[
+MV_g = \sum_{i \in g} C_i \cdot P_i
+\]
+
+Let \( G_N \subset G \) denote the set of the \( N \) largest groups ranked by \( MV_g \).
+
+---
+
+## 5. Binary Asset Solvency Buffer (BASB)
+
+The Binary Asset Solvency Buffer (BASB) is defined as:
+\[
+BASB = \sum_{g \in G_N} MV_g
+\]
+
+The BASB represents capital explicitly reserved against the complete failure of the largest collateral concentrations.
+
+---
+
+## 6. Effective Borrowing Power
+
+Effective Borrowing Power (EBP) is defined as:
+\[
+EBP = \max\left(0, \; BBP - BASB \right)
+\]
+
+Borrowing is constrained by:
+\[
+V_D \leq EBP
+\]
+
+This constraint is enforced ex ante and precedes liquidation logic.
+
+---
+
+## 7. Binary Long-Tail Risk Model (100% VaR)
+
+Prediction market outcome shares are binary assets whose terminal value at resolution time \( T \) satisfies:
+\[
+P_i(T) \in \{0, 1\}
+\]
+
+Siprifi explicitly models a conservative tail-risk event:
+
+**Assumption A1 (Tail Event):**
+\[
+\forall g \in G_N: \quad MV_g(T) = 0
+\]
+
+This corresponds to a 100% Value-at-Risk (VaR) assumption on the \( N \) largest collateral groups, assuming:
+- instantaneous loss,
+- zero recovery,
+- no reliance on liquidation liquidity.
+
+---
+
+## 8. Solvency Under Tail Event
+
+At any time \( t < T \), the system enforces:
+\[
+V_D \leq BBP - \sum_{g \in G_N} MV_g
+\]
+
+Under Assumption A1, remaining liquidation-adjusted collateral is:
+\[
+V_C^{liq,rem}
+= \sum_{i \in I \setminus G_N} C_i \cdot P_i \cdot LT_i
+= V_C^{liq} - \sum_{g \in G_N} (MV_g \cdot LT_g)
+\]
+
+Since \( LT_i \leq 1 \) for all assets:
+\[
+V_C^{liq,rem} \geq BBP - \sum_{g \in G_N} MV_g
+\]
+
+Combining with the borrowing constraint:
+\[
+V_C^{liq,rem} \geq V_D
+\]
+
+Therefore:
+\[
+HF_{rem} = \frac{V_C^{liq,rem}}{V_D} \geq 1
+\]
+
+Thus, even if the \( N \) largest collateral groups collapse to zero value, the protocol remains solvent and produces no bad debt.
+
+---
+
+## 9. Economic Interpretation
+
+The Binary Asset Solvency Buffer functions as:
+- a deterministic concentration capital charge,
+- a tail-risk reserve for binary assets,
+- a solvency-preserving constraint independent of liquidation efficiency.
+
+Concentrated portfolios experience reduced leverage, while diversified portfolios retain higher borrowing capacity.
+
+---
+
+## 10. Core System Invariant
+
+For all users and all times:
+\[
+V_D \leq BBP - \sum_{g \in G_N} MV_g
+\]
+\[
+HF \geq 1 \quad \text{under normal operation}
+\]
+\[
+HF \geq 1 \quad \text{under Assumption A1}
+\]
+
+These conditions define the core solvency invariant of Siprifi Finance and enable prediction market shares to be safely integrated as collateral in a lending protocol.

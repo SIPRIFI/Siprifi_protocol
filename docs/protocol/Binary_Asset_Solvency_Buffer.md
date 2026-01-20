@@ -4,7 +4,7 @@
     ">
 </p>
 
-# Formal System Model and Binary Asset Solvency Buffer (BASB)
+# Binary Asset Solvency Buffer (BASB)
 
 This section presents the formal mathematical specification of the Siprifi Finance protocol. Siprifi inherits the core collateralization, liquidation, and accounting mechanics of Aave V3, and introduces an additional solvency layer specifically designed for binary, highly correlatable assets such as prediction market outcome shares.
 

@@ -220,5 +220,5 @@ This document is for informational purposes only and does not constitute financi
 
 ---
 
-> **Proprietary Document — Copyright © 2025 Siprifi**  
+> **Proprietary Document — Copyright © 2026 Siprifi**  
 > All intellectual property rights, including architecture, formulas, diagrams, and risk logic, are exclusively owned by Siprifi.

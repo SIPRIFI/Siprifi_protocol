@@ -1,81 +1,138 @@
 <p align="center">
-  <img src="assets/siprifi-logo.png" alt="Siprifi Logo" width="600
-    ">
+  <img src="assets/siprifi-logo.png" alt="Siprifi Logo" width="600">
 </p>
 
 # Siprifi Finance
 
-Siprifi Finance is a decentralized protocol that turns prediction market outcome shares into productive collateral, enabling capital-efficient protection markets and reusable liquidity.
+**Siprifi Finance is a decentralized structured credit and clearing protocol for binary risk markets.**
 
-By combining prediction-based risk primitives with a DeFi-native lending layer, Siprifi allows risk to be priced, traded, collateralized, and redeployed across uncorrelated exposures.
+Siprifi enables prediction market exposures to be issued, structured, and settled using pre-funded capital, hierarchical risk tranching, and strict solvency constraints. The protocol is designed to support protection-style markets (analogous to CDS and insurance) without relying on leverage, rehypothecation, or liquidation liquidity.
+
+Rather than maximizing leverage, Siprifi maximizes *risk isolation, capital certainty, and settlement reliability* for binary and highly correlated assets.
 
 ---
 
 ## Motivation
 
-Traditional protection markets (such as insurance and CDS) suffer from structural capital inefficiencies:
+Traditional protection markets (insurance, CDS, catastrophe bonds) suffer from persistent capital inefficiencies:
 
 - Capital is locked in bilateral contracts for long durations  
-- Liquidity is one-sided and disappears during periods of stress  
-- Risk transfer depends on the continuous willingness of protection sellers  
+- Risk transfer depends on the ongoing solvency of counterparties  
+- Settlement often relies on discretionary or opaque processes  
+- Capital buffers are fragmented and non-transparent  
 
-Prediction markets solve price discovery but still suffer from siloed capital: funds committed to a single market cannot be reused elsewhere.
+Prediction markets solve price discovery for binary events but introduce new challenges:
 
-Siprifi addresses this limitation by enabling prediction market outcome shares to function as collateral in a lending protocol, unlocking capital while preserving over-collateralization and protocol solvency.
+- Binary payoff discontinuities  
+- Extreme correlation during resolution  
+- Liquidity evaporation near maturity  
+- Incompatibility with mark-to-market liquidation models  
 
----
-
-## High-Level Design
-
-Siprifi is built on a modified Aave-style lending architecture and introduces several key innovations:
-
-- Prediction market YES/NO shares as collateral  
-- Over-collateralized borrowing against outcome shares  
-- Governance-defined correlated risk groups  
-- Borrowing power adjusted for concentration and correlation risk  
-- Standard DeFi liquidations and oracle-based pricing  
-
-This design allows users to reuse capital across multiple uncorrelated risks while preventing excessive leverage on concentrated or correlated outcomes.
+Siprifi addresses these limitations by combining prediction market primitives with **clearing house-style risk management**, enabling capital to be *structured rather than leveraged*.
 
 ---
 
-## What Siprifi Is (and Is Not)
+## Core Design Principles
 
-**Siprifi is:**
-- A lending protocol for prediction market assets  
-- A capital efficiency layer for protection markets  
-- A DeFi-native risk management system  
+Siprifi is built on the following non-negotiable principles:
 
-**Siprifi is not:**
-- A prediction market itself  
-- A traditional insurance protocol  
-- An uncollateralized risk-sharing system  
+- **Pre-funded risk**  
+  All losses are capitalized ex ante. The protocol never relies on future liquidity or forced liquidation.
+
+- **Hierarchical risk tranching**  
+  Every exposure has a clearly defined seniority and payment priority.
+
+- **Binary-aware solvency modeling**  
+  Risk is modeled assuming worst-case (100% VaR) outcomes for correlated binary assets.
+
+- **No recursive leverage**  
+  Capital may be reused only through explicit subordination, never through rehypothecation.
+
+- **Deterministic settlement**  
+  All contracts settle via protocol rules, not discretionary counterparties.
+
+---
+
+## What Siprifi Is
+
+- A structured credit protocol for binary risk markets  
+- A decentralized clearing layer for prediction-based exposures  
+- A pre-funded protection market infrastructure  
+- A solvency-first alternative to liquidation-driven DeFi systems  
 
 ---
 
-## Documentation
+## What Siprifi Is Not
 
-The repository is organized into conceptual, technical, and economic documents:
-
-- **Technical Whitepaper**  
-  `docs/protocol/technical_whitepaper.md`  
-  Formal specification of protocol mechanics, risk parameters, and liquidation logic.
-
-- **Siprifi Thesis**  
-  `docs/vision/siprifi_thesis.pdf`  
-  Conceptual and economic rationale for market-based protection systems.
-
-- **Protocol Overview**  
-  `docs/protocol/protocol_overview.md`  
-  High-level architecture and user flows.
-
-- **Risk Management**  
-  `docs/protocol/risk_management.md`  
-  Detailed explanation of diversification rules and correlated risk handling.
-
-See the full document map in the repository structure section below.
+- A lending or borrowing protocol  
+- A leverage or yield amplification system  
+- A traditional prediction market  
+- An insurance protocol relying on under-collateralized promises  
+- A system dependent on liquidators or secondary market liquidity  
 
 ---
+
+## High-Level Architecture
+
+Siprifi organizes risk into explicitly defined structures:
+
+- **Senior Base Contracts**  
+  Fully collateralized exposures backed by strong, non-binary assets (e.g. ETH, stablecoins). These define the maximum notional capacity of the system.
+
+- **Subordinated Binary Credit Contracts**  
+  Shorter-dated, conditional exposures backed by the non-occurrence of other events. These contracts are strictly subordinated and subject to correlation and duration constraints.
+
+- **Protocol Solvency Buffers**  
+  Explicit capital reserves designed to absorb tail-risk events and pricing errors.
+
+- **Settlement Waterfall**  
+  A deterministic payment hierarchy ensuring senior claims are never impaired by subordinated outcomes.
+
+This architecture mirrors established financial systems such as CCP default funds, CDS tranching, and structured credit vehicles.
+
+---
+
+## Risk Management Model
+
+Siprifi enforces solvency using conservative, worst-case assumptions:
+
+- Binary assets are modeled with terminal values in \{0,1\}
+- Correlated groups are defined by governance
+- The largest correlated exposures are assumed to fail simultaneously
+- Capital is reserved ex ante to absorb these failures
+
+This ensures the protocol remains solvent even under extreme, discontinuous outcomes.
+
+---
+
+## Capital Efficiency (Without Leverage)
+
+Siprifi improves capital efficiency not by increasing leverage, but by:
+
+- Shortening contract duration where possible  
+- Enforcing statistical decorrelation between exposures  
+- Allowing subordinated risk to be issued only beneath senior collateral  
+- Releasing capital deterministically at resolution  
+
+Capital reuse occurs through **time, structure, and priority**, not through rehypothecation.
+
+---
+
+## Settlement and Solvency
+
+All Siprifi contracts are settled through protocol-defined logic:
+
+- No forced liquidations  
+- No reliance on third-party liquidators  
+- No assumptions of market liquidity at resolution  
+
+Losses are absorbed according to a predefined waterfall, ensuring predictable and transparent outcomes for all participants.
+
+---
+
+## Repository Structure
+
+
 
 ## Repository Structure
 
@@ -89,7 +146,7 @@ siprifi/
 │   │   ├── protocol_overview.md
 │   │   ├── technical_whitepaper.md
 │   │   ├── risk_management.md
-|   |   |──  Architecture_SmartContractV2_MVP.md
+|   |   |── Structured_Credit_for_Binary_Risk_Market.pdf
 │   │   └── liquidation_and_oracles.md
 │   ├── economics/
 │   │   ├── protection_markets.md

@@ -1,144 +1,224 @@
 
+
+
+
 <p align="center">
-  <img src="../../assets/siprifi-logo.png" alt="Siprifi Logo" width="600
-    ">
+  <img src="../../assets/siprifi-logo.png" alt="Siprifi Logo" width="600">
 </p>
 
-**Whitepaper V2.0**
-**Date: Dec 30, 2025**
-
-**Abstract:**
-Prediction markets represent a powerful mechanism for information aggregation and decentralized hedging. However, their growth and the participation of liquidity providers (often acting as "insurance sellers") are hampered by capital inefficiency. Under current models, capital used to underwrite one prediction market outcome is typically siloed and cannot be leveraged for other opportunities. Siprifi Finance introduces a novel lending protocol, built upon the robust foundations of Aave, designed to accept validated Yes/No shares from prediction markets as collateral. By introducing a unique risk-mitigation mechanism Siprifi Finance aims to significantly enhance capital efficiency of prediction markets and unlock new ways of hedging various risks for defi users as well as new place to allocate capital for competitive yield.
+# Siprifi Finance  
+**Whitepaper V3**  
+**Date: 1/23/2026**
 
 ---
 
-**1. Introduction: The Promise and Problem of Prediction Markets**
+## Abstract
 
-Decentralized prediction markets (e.g., Polymarket) have emerged as innovative platforms allowing users to speculate on or hedge against the outcomes of real-world events. They leverage the "wisdom of the crowd" to forecast future events, offering valuable insights and risk management tools. Participants can buy or sell "outcome shares" (e.g., "YES, Candidate A will win" or "NO, Smart Contract X will not be exploited").
+Prediction markets are powerful tools for decentralized information discovery and risk transfer. However, current models suffer from severe capital inefficiencies and structural limitations that prevent them from scaling into robust protection markets.
 
-Individuals or entities who provide liquidity to these markets, effectively underwriting the "insurance" against certain outcomes (by selling "YES" shares on an undesirable event, or buying "NO" shares), play a crucial role. However, their capacity is fundamentally limited by capital efficiency.
+Siprifi Finance introduces a decentralized **structured credit protocol** that transforms prediction market outcome shares into reusable, risk-aware collateral. By combining prediction markets with **CDS-inspired protection logic**, maturity differentiation, and strict decorrelation constraints, Siprifi enables capital-efficient protection markets without relying on traditional leverage.
 
-**The Core Problem: Siloed Capital and Inefficiency**
-In the current paradigm, capital committed to backing shares in one specific prediction market is locked to that market. An "insurance seller" wishing to underwrite ten distinct, uncorrelated risks would need ten separate pools of capital. This is starkly different from traditional insurance, where diversified risk pooling allows for greater capital leverage. This inefficiency:
-*   Limits the amount of liquidity available in prediction markets.
-*   Reduces the potential returns for liquidity providers.
-*   Increases cost of insurance for insurance buyers
-*   Constrains the overall growth and utility of the prediction market ecosystem.
+Siprifi is not a margin system.  
+It is a **credit structuring engine for decentralized risk**.
 
 ---
 
-**2. Our Vision: Siprifi Finance protocol - A Liquidity Engine for Prediction Markets**
+## 1. Introduction: From Prediction Markets to Structured Credit
 
-Siprifi Finance is a decentralized lending protocol designed to address the capital inefficiency inherent in current prediction market structures. By forking the battle-tested Aave V3 architecture, Siprifi Finance will allow users to:
+Prediction markets (e.g., Polymarket) allow users to express beliefs about future events using YES/NO outcome shares. These shares implicitly encode probabilities and act as decentralized risk primitives.
 
-*   **Deposit validated Yes/No outcome shares** from reputable prediction markets as collateral.
-*   **Borrow assets (e.g., stablecoins)** against this collateral.
-*   **Unlock liquidity**, enabling "insurance sellers" and traders to redeploy capital into new prediction market opportunities, other DeFi protocols, or for any other purpose.
+In practice, participants who sell protection (by minting or holding the losing side of an outcome) behave similarly to **insurance sellers or CDS writers**. However, unlike traditional credit markets, prediction market capital is:
 
-Our vision is to create a synergistic relationship: Siprifi Finance will draw strength from the growing prediction market ecosystem, and in turn, fuel its expansion by providing much-needed capital efficiency.
+- Locked until resolution  
+- Not reusable across risks  
+- Poorly structured across time and correlation  
 
-### Market Operational Workflow
-Below is the technical lifecycle of the risk markets that generate the collateral for the Siprifi protocol:
-![Market Lifecycle and Use Cases](../../assets/workflow.drawio.svg)
+This results in thin liquidity, high capital requirements, and inefficient risk pricing.
+
+Siprifi addresses this by reframing prediction market exposure as **structured, overcollateralized credit** rather than speculative leverage.
+
 ---
 
-**3. Core Mechanics: Adapting Aave for Prediction Market Shares**
+## 2. The Core Problem: Siloed Risk and Static Capital
 
-Siprifi Finance will inherit many of Aave's core features, including its over-collateralized lending model, Loan-to-Value (LTV) ratios, liquidation thresholds, and Health Factor calculations. However, specific adaptations are necessary for prediction market shares:
+Current prediction market participants face several structural issues:
 
-*   **Collateral Eligibility:** Initially, Siprifi Finance will accept Yes/No shares from established prediction markets (e.g., Polymarket) for events with clear, objectively verifiable outcomes. Governance will play a key role in whitelisting eligible markets and share types.
-  ![SiprifiV2vsOTCderivatives](../../assets/SiprifiV2_model.svg)
-*   **Price Oracles:** Robust and reliable price feeds are paramount. We will integrate with leading oracle providers capable of accurately pricing these often volatile and binary-outcome-approaching shares. The price of a share (e.g., a "YES" share trading at $0.30) will determine its collateral value.
-*   **Standard Lending Operations:** Users will be able to deposit their eligible shares, see their collateral value, and borrow other assets based on the assigned LTV for that share type. Interest rates will be determined by supply and demand dynamics within Siprifi Finance's lending pools.
+- Capital backing a single outcome cannot be reused  
+- Long-dated risks lock capital for extended periods  
+- No differentiation between senior and short-term protection  
+- Correlated risks are treated independently, creating hidden fragility  
+
+This mirrors early-stage OTC derivatives markets before the emergence of structured credit and clearing mechanisms.
+
+Siprifi applies lessons from **CDS markets, structured finance, and modern DeFi lending** to solve this.
+
 ---
 
-**4. The Siprifi Innovation: Diversification Requirement**
+## 3. Siprifi Vision: A Structured Credit Layer for Prediction Markets
 
-The unique nature of prediction market shares – their potential for binary outcomes (value going to $0 or $1 at resolution) and the temptation for users to make large, concentrated bets – necessitates an additional layer of risk management beyond standard LTVs.
+Siprifi Finance is a decentralized protocol that:
 
-Siprifi Finance introduces a novel rule for calculating a user's effective borrowing power:
+- Accepts validated YES/NO shares as collateral  
+- Structures them into **credit-like risk tranches**  
+- Enforces **decorrelation and maturity constraints**  
+- Enables controlled liquidity reuse across uncorrelated risks  
 
-**`EffectiveBorrowingPower = BaseBorrowingPower - Sum(MarketValueOf_N_LargestCollateralGroups)`**
+Rather than maximizing leverage, Siprifi maximizes **risk-adjusted capital efficiency**.
+
+![Structured Risk Lifecycle]()
+---
+
+## 4. High-Level Architecture
+
+Siprifi is built on a modified Aave-style architecture, with fundamental conceptual changes:
+
+### What Siprifi Is
+- A structured credit protocol  
+- A protection market liquidity engine  
+- A CDS-inspired risk transfer system  
+
+### What Siprifi Is Not
+- A prediction market  
+- A leverage or margin trading platform  
+- A reflexive liquidation casino  
+
+---
+
+## 5. Collateral Model: YES / NO Shares as Credit Instruments
+
+Siprifi accepts outcome shares from approved prediction markets with:
+
+- Objective, verifiable resolution  
+- Robust oracle pricing  
+- Sufficient secondary liquidity  
+
+Each YES or NO share represents a **binary credit exposure**:
+
+- YES ≈ protection buyer  
+- NO ≈ protection seller  
+
+These shares are treated as **non-linear, maturity-bound credit assets**, not simple tokens.
+
+![Siprifi vs OTC Derivatives]()
+---
+
+## 6. Maturity Segmentation & Duration Control
+
+A core innovation of Siprifi is **duration differentiation**:
+
+- **ETH-backed base positions** are long-duration and senior  
+- **NO-backed positions** must be **shorter maturity** than the base position  
+- Short-dated protection can be layered on top of long-term collateral  
+
+This mirrors traditional credit markets, where short-term CDS protection cannot exceed the duration of the underlying bond.
+
+> A short-term failure must never cascade into long-term insolvency.
+
+---
+
+## 7. Decorrelation Constraint (Critical Design Rule)
+
+Siprifi enforces **strict decorrelation requirements**:
+
+- If two collateral positions are correlated, they cannot both contribute full borrowing power  
+- Governance-defined correlation groups collapse into a single risk unit  
+- If one position fails, the other must remain solvent  
+
+This prevents synthetic leverage via correlated bets.
+
+---
+
+## 8. Borrowing Power as Structured Credit Capacity
+
+Siprifi replaces classical LTV-based leverage with **Effective Credit Capacity**:
+
+
+
+EffectiveCreditCapacity = BaseCreditValue − Sum(Value of N Largest Correlated Risk Buckets)
 
 Where:
+- BaseCreditValue is derived from conservative collateral valuation  
+- Risk Buckets group correlated YES/NO exposures  
+- N is a governance-controlled safety parameter  
 
-*   **`BaseBorrowingPower`**: The borrowing power calculated using Aave's standard algorithm based on the total collateral value and LTV ratios.
-*   **`Sum(MarketValueOf_N_LargestCollateralGroups)`**: This is a deduction representing the sum of the current market values of the user's "N" largest distinct collateral positions *or* "N" largest governance-defined correlated asset groups.
-    *   **"N Largest Collaterals"**: "Biggest" is determined by the current market value of the collateralized shares for a specific event.
-    *   **"Correlated Asset Groups"**: Crucially, Siprifi Finance governance will have the power to define groups of prediction market shares that are deemed highly correlated (e.g., shares on the outcomes of multiple, related sporting events; shares on different crypto assets highly exposed to the same systemic risk). Such a group will be treated as a *single collateral entity* for the purpose of identifying the "N Largest." The market value of the group will be the sum of the market values of its constituent shares.
-    *   The value of **"N"** (e.g., 1, 2, or 3) will be a key risk parameter set by governance.
+This ensures that:
+- A total loss in the largest risk bucket never creates protocol bad debt  
+- Borrowing capacity reflects *credit diversification*, not raw size  
 
-**Mechanics and Rationale:**
+![Siprifi Risk Engine & Concentration Logic](../../assets/ConcentrationLogic.svg)
+---
 
-1.  **Protecting Protocol Solvency:** This rule directly mitigates the risk of bad debt arising from a user's largest, most concentrated positions resolving unfavorably and their collateral value plummeting to zero. By preemptively reducing borrowing power based on these concentrated risks, the protocol maintains a larger safety margin.
-2.  **Incentivizing True Diversification:** Users are strongly incentivized to diversify their collateral across genuinely uncorrelated prediction market events. Concentrating collateral in a few large positions or in a set of correlated positions will directly and significantly reduce their borrowing capacity. To maximize borrowing power, users must spread their risk.
-3.  **Adaptable Risk Management:** Governance can adjust "N" and the definitions of "Correlated Asset Groups" to respond to evolving market conditions and risk assessments.
+## 9. Example Scenario
 
-To visualize how the protocol handle dominant risks to maintain solvency:
+A user deposits:
 
-![Figure 2: Siprifi Risk Engine & Concentration Offset Logic](../../assets/ConcentrationLogic.svg)
+- Long-dated ETH-backed collateral  
+- Multiple short-dated NO positions on uncorrelated events  
 
-> **Note:** The subtraction of the N-largest groups ensures that even a 100% loss in a primary position does not trigger bad debt.
+If one NO market resolves against the user:
+- Only that short-term position collapses  
+- ETH-backed base remains intact  
+- Other NO positions remain unaffected  
 
-**Example:**
-A user deposits various prediction market shares. If the portfolio's total market value is $10,000 and the LTV is 50%, the algorithm calculates a Base Borrowing Power of $5,000. If "N" is set to 1, and the user's largest single (or correlated group) collateral position has a market value of $5,000, their Effective Borrowing Power on Siprifi Finance becomes $5,000 - $5,000 = $0. If their two largest (N=2) positions/groups were valued at $2,000 and $1,500, their borrowing power would be $5,000 - ($2,000 + $1,500) = $1,500.
+This mimics **CDS ladders**, not leveraged speculation.
 
 ---
 
-**5. Risk Management Framework**
+## 10. Liquidation Logic
 
-Beyond the innovative borrowing power adjustment, Siprifi Finance will employ a multi-layered risk management strategy:
+Liquidations follow structured credit principles:
 
-*   **Conservative LTV Ratios:** Prediction market shares will likely start with more conservative LTV ratios compared to more established crypto-assets, reflecting their unique volatility.
-*   **Liquidation Mechanisms:** Standard Aave liquidation mechanisms will apply. If a user's Health Factor drops below the threshold, their collateral (Yes/No shares) will be made available for liquidators to purchase at a discount. Liquidators would then typically sell these shares on the native prediction markets. The protocol will explore partnerships or mechanisms to facilitate efficient liquidation of these specialized assets.
-*   **Governance Oversight:** Key risk parameters, including LTVs, liquidation thresholds, the value of "N," oracle selection, and the crucial definitions of correlated asset groups, will be managed by Siprifi Finance governance.
-*   **Safety Module/Treasury:** A portion of protocol fees may be allocated to a safety module or treasury to cover potential bad debt in extreme, unforeseen circumstances.
+- Only failing risk buckets are liquidated  
+- Liquidation priority respects maturity and seniority  
+- NO-share liquidations occur via native prediction markets  
 
----
-
-**6. Governance**
-
-Siprifi Finance will be governed by its native token holders. Governance will be responsible for:
-
-*   Whitelisting eligible prediction markets and share types for collateralization.
-*   Setting and adjusting risk parameters (LTVs, liquidation thresholds, "N").
-*   Defining and updating "Correlated Asset Groups."
-*   Selecting and managing oracle providers.
-*   Approving protocol upgrades.
-*   Managing the protocol treasury and safety module.
-
-A robust and active governance community will be crucial for the long-term security and adaptability of the protocol.
+No cross-contamination between unrelated positions.
 
 ---
 
-**7. Ecosystem Impact & Future Directions**
+## 11. Governance & Risk Control
 
-We believe Siprifi Finance will have a profound positive impact:
+Governance controls:
 
-*   **For Prediction Market Liquidity Providers:** Unlocks significant capital, allowing for greater participation and higher potential returns.
-*   **For Prediction Markets:** Fosters deeper liquidity, tighter spreads, and the creation of more diverse markets due to increased capital availability.
-*   **For the Broader DeFi Ecosystem:** Introduces a new, valuable collateral type and a novel risk management paradigm.
+- Approved markets and share types  
+- Correlation group definitions  
+- Maturity constraints  
+- Credit capacity parameters  
+- Oracle selection  
 
-Future directions may include:
-*   Integration with a wider array of prediction platforms.
-*   Developing more sophisticated tools for assessing correlation and risk.
-*   Creating structured products based on prediction market share collateral.
-
----
-
-**8. Conclusion**
-
-Prediction markets hold immense potential, but their growth is tethered by capital inefficiency. Siprifi Finance offers a direct solution by enabling prediction market shares to be used as collateral within a modified Aave framework. Our innovative risk management approach, especially with governance-defined correlated asset grouping, provides a robust mechanism to manage the unique risks associated with this asset class while strongly incentivizing users towards genuine diversification.
-
-Siprifi Finance aims to be more than just a lending protocol; it aspires to be a foundational liquidity layer that empowers the entire DeFi ecosystem, fostering greater participation, efficiency, and innovation.
+Risk parameters are adaptive, not static.
 
 ---
 
-**Disclaimer:**
-This whitepaper is for informational purposes only and does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation of any security or any other product or service. The information contained herein has been obtained from sources believed to be reliable, but its accuracy and completeness are not guaranteed. Siprifi Finance is a work in progress and is subject to change. Participating in DeFi protocols involves significant risk, including the risk of loss of principal.
+## 12. Ecosystem Impact
+
+Siprifi enables:
+
+- Scalable protection markets  
+- Capital-efficient risk selling  
+- Institutional-grade risk structuring  
+- DeFi-native CDS-like products  
+
+It bridges prediction markets with real financial risk infrastructure.
 
 ---
-> *Proprietary Document - Copyright © 2025 Siprifi*
-> All intellectual property rights in this document, including but not limited to text, images, diagrams, formulas (specifically the "Siprifi Risk Engine" and "Effective Borrowing Power" logic), and overall conceptual architecture, are the exclusive property of **Siprifi**. 
 
+## 13. Conclusion
 
+Siprifi is not leverage.  
+Siprifi is not speculation.
+
+Siprifi is **structured decentralized credit**, built from prediction markets, governed by decorrelation, and constrained by maturity.
+
+It transforms isolated bets into a composable, solvent, and scalable risk market.
+
+---
+
+## Disclaimer
+
+This document is for informational purposes only and does not constitute financial advice. Siprifi Finance is experimental and subject to change. Participation involves risk, including loss of principal.
+
+---
+
+> **Proprietary Document — Copyright © 2025 Siprifi**  
+> All intellectual property rights, including architecture, formulas, diagrams, and risk logic, are exclusively owned by Siprifi.

@@ -34,6 +34,15 @@ The core of Siprifi is the **Structured Credit Engine (SCE)**, which manages the
 ### 2.1 The Credit Capacity Framework
 Siprifi moves away from simple LTV (Loan-to-Value) ratios, which fail to account for event-based volatility. Instead, it utilizes **Effective Base Power (EBP)**.
 
+$$
+V_C = \sum_{i \in I} C_i \cdot P_i
+$$
+
+$$
+EBP = \max \left( 0,\; BBP - BASB \right)
+$$
+
+
 $$EBP = V_{base} \cdot \omega_{senior} - \sum_{k=1}^{n} \max(B_k)$$
 
 Where:

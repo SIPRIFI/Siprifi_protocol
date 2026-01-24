@@ -43,8 +43,6 @@ EBP = \max \left( 0,\; BBP - BASB \right)
 $$
 
 
-$$EBP = V_{base} \cdot \omega_{senior} - \sum_{k=1}^{n} \max(B_k)$$
-
 Where:
 * $V_{base}$: Market value of the senior collateral (e.g., ETH/stETH).
 * $\omega_{senior}$: Haircut coefficient determined by governance ($0 < \omega < 1$).

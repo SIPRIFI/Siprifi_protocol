@@ -42,12 +42,17 @@ $$
 EBP = \max \left( 0,\; BBP - BASB \right)
 $$
 
+**Where:**
 
-Where:
-* $V_{base}$: Market value of the senior collateral (e.g., ETH/stETH).
-* $\omega_{senior}$: Haircut coefficient determined by governance ($0 < \omega < 1$).
-* $B_k$: A "Risk Bucket" representing a group of correlated events.
-* $\max(B_k)$: The maximum potential loss within a specific correlation cluster.
+- $V_C$: Total market value of the collateral.
+- $C_i$: Quantity of collateral asset $i$.
+- $P_i$: Oracle price of asset $i$.
+- $EBP$: Effective Borrowing Power.
+- $BBP$: Base Borrowing Power.
+- $BASB$: Binary Asset Solvency Buffer.
+- $B_k$: A *risk bucket* representing a group of correlated events or assets.
+- $\max(B_k)$: Maximum potential loss within a given correlation cluster.
+
 
 ### 2.2 Risk Bucket Aggregation
 Assets are not treated individually. They are assigned to **Correlation Groups ($G$)**. 

@@ -1,224 +1,129 @@
-
-
-
-
 <p align="center">
   <img src="../../assets/siprifi-logo.png" alt="Siprifi Logo" width="600">
 </p>
 
-# Siprifi Finance  
-**Whitepaper V3**  
-**Date: 1/23/2026**
+# Siprifi Finance: Whitepaper V3
+**Version:** 3.1.0 (Technical Deep-Dive)  
+**Date:** January 24, 2026  
+**Status:** Confidential / Technical Specification
 
 ---
 
-## Abstract
+## 1. Abstract: The Evolution of Risk Primitives
 
-Prediction markets are powerful tools for decentralized information discovery and risk transfer. However, current models suffer from severe capital inefficiencies and structural limitations that prevent them from scaling into robust protection markets.
+Decentralized prediction markets have demonstrated their ability to encode collective beliefs and price binary outcomes on-chain. 
 
-Siprifi Finance introduces a decentralized **structured credit protocol** that transforms prediction market outcome shares into reusable, risk-aware collateral. By combining prediction markets with **CDS-inspired protection logic**, maturity differentiation, and strict decorrelation constraints, Siprifi enables capital-efficient protection markets without relying on traditional leverage.
+However, despite their informational value, current prediction market designs remain structurally inefficient as mechanisms for risk transfer. Capital is locked until resolution, exposures are siloed, maturities are flat, and correlated risks are treated independently, leading to poor capital efficiency and fragile liquidity under stress.
 
-Siprifi is not a margin system.  
-It is a **credit structuring engine for decentralized risk**.
+Siprifi introduces a decentralized structured credit protocol that repurposes prediction market outcome shares into reusable, risk-aware credit instruments. By combining binary YES/NO exposures with principles derived from credit default swaps (CDS), maturity segmentation and tranches form (CDO’s), and strict decorrelation constraints, Siprifi enables capital-efficient protection markets without relying on traditional leverage, margin trading, or reactive liquidations.
+
+The protocol treats outcome shares not as speculative positions, but as time-bound credit exposures with deterministic settlement paths. Long-duration, strongly collateralized positions form the senior risk layer, while short-duration, NO-backed exposures operate as junior tranches constrained by correlation, maturity, and system-wide credit capacity.
+
+ Losses are absorbed locally, preventing cascading insolvency across unrelated risks.
+
+Siprifi is not a prediction market, nor a leverage platform.
+It is a credit structuring engine for decentralized risk, designed to make on-chain protection markets composable, solvent, and economically intelligible under worst-case assumptions
+
 
 ---
 
-## 1. Introduction: From Prediction Markets to Structured Credit
+## 2. The Structured Credit Engine (SCE)
 
-Prediction markets (e.g., Polymarket) allow users to express beliefs about future events using YES/NO outcome shares. These shares implicitly encode probabilities and act as decentralized risk primitives.
+The core of Siprifi is the **Structured Credit Engine (SCE)**, which manages the lifecycle of protection-selling positions.
 
-In practice, participants who sell protection (by minting or holding the losing side of an outcome) behave similarly to **insurance sellers or CDS writers**. However, unlike traditional credit markets, prediction market capital is:
+### 2.1 The Credit Capacity Framework
+Siprifi moves away from simple LTV (Loan-to-Value) ratios, which fail to account for event-based volatility. Instead, it utilizes **Effective Credit Capacity (ECC)**.
 
-- Locked until resolution  
-- Not reusable across risks  
-- Poorly structured across time and correlation  
-
-This results in thin liquidity, high capital requirements, and inefficient risk pricing.
-
-Siprifi addresses this by reframing prediction market exposure as **structured, overcollateralized credit** rather than speculative leverage.
-
----
-
-## 2. The Core Problem: Siloed Risk and Static Capital
-
-Current prediction market participants face several structural issues:
-
-- Capital backing a single outcome cannot be reused  
-- Long-dated risks lock capital for extended periods  
-- No differentiation between senior and short-term protection  
-- Correlated risks are treated independently, creating hidden fragility  
-
-This mirrors early-stage OTC derivatives markets before the emergence of structured credit and clearing mechanisms.
-
-Siprifi applies lessons from **CDS markets, structured finance, and modern DeFi lending** to solve this.
-
----
-
-## 3. Siprifi Vision: A Structured Credit Layer for Prediction Markets
-
-Siprifi Finance is a decentralized protocol that:
-
-- Accepts validated YES/NO shares as collateral  
-- Structures them into **credit-like risk tranches**  
-- Enforces **decorrelation and maturity constraints**  
-- Enables controlled liquidity reuse across uncorrelated risks  
-
-Rather than maximizing leverage, Siprifi maximizes **risk-adjusted capital efficiency**.
-
-![Structured Risk Lifecycle]()
----
-
-## 4. High-Level Architecture
-
-Siprifi is built on a modified Aave-style architecture, with fundamental conceptual changes:
-
-### What Siprifi Is
-- A structured credit protocol  
-- A protection market liquidity engine  
-- A CDS-inspired risk transfer system  
-
-### What Siprifi Is Not
-- A prediction market  
-- A leverage or margin trading platform  
-- A reflexive liquidation casino  
-
----
-
-## 5. Collateral Model: YES / NO Shares as Credit Instruments
-
-Siprifi accepts outcome shares from approved prediction markets with:
-
-- Objective, verifiable resolution  
-- Robust oracle pricing  
-- Sufficient secondary liquidity  
-
-Each YES or NO share represents a **binary credit exposure**:
-
-- YES ≈ protection buyer  
-- NO ≈ protection seller  
-
-These shares are treated as **non-linear, maturity-bound credit assets**, not simple tokens.
-
-![Siprifi vs OTC Derivatives]()
----
-
-## 6. Maturity Segmentation & Duration Control
-
-A core innovation of Siprifi is **duration differentiation**:
-
-- **ETH-backed base positions** are long-duration and senior  
-- **NO-backed positions** must be **shorter maturity** than the base position  
-- Short-dated protection can be layered on top of long-term collateral  
-
-This mirrors traditional credit markets, where short-term CDS protection cannot exceed the duration of the underlying bond.
-
-> A short-term failure must never cascade into long-term insolvency.
-
----
-
-## 7. Decorrelation Constraint (Critical Design Rule)
-
-Siprifi enforces **strict decorrelation requirements**:
-
-- If two collateral positions are correlated, they cannot both contribute full borrowing power  
-- Governance-defined correlation groups collapse into a single risk unit  
-- If one position fails, the other must remain solvent  
-
-This prevents synthetic leverage via correlated bets.
-
----
-
-## 8. Borrowing Power as Structured Credit Capacity
-
-Siprifi replaces classical LTV-based leverage with **Effective Credit Capacity**:
-
-
-
-EffectiveCreditCapacity = BaseCreditValue − Sum(Value of N Largest Correlated Risk Buckets)
+$$ECC = V_{base} \cdot \omega_{senior} - \sum_{k=1}^{n} \max(B_k)$$
 
 Where:
-- BaseCreditValue is derived from conservative collateral valuation  
-- Risk Buckets group correlated YES/NO exposures  
-- N is a governance-controlled safety parameter  
+* $V_{base}$: Market value of the senior collateral (e.g., ETH/stETH).
+* $\omega_{senior}$: Haircut coefficient determined by governance ($0 < \omega < 1$).
+* $B_k$: A "Risk Bucket" representing a group of correlated events.
+* $\max(B_k)$: The maximum potential loss within a specific correlation cluster.
 
-This ensures that:
-- A total loss in the largest risk bucket never creates protocol bad debt  
-- Borrowing capacity reflects *credit diversification*, not raw size  
-
-![Siprifi Risk Engine & Concentration Logic](../../assets/ConcentrationLogic.svg)
----
-
-## 9. Example Scenario
-
-A user deposits:
-
-- Long-dated ETH-backed collateral  
-- Multiple short-dated NO positions on uncorrelated events  
-
-If one NO market resolves against the user:
-- Only that short-term position collapses  
-- ETH-backed base remains intact  
-- Other NO positions remain unaffected  
-
-This mimics **CDS ladders**, not leveraged speculation.
+### 2.2 Risk Bucket Aggregation
+Assets are not treated individually. They are assigned to **Correlation Groups ($G$)**. 
+If $Asset_A$ and $Asset_B$ have a historical or logical correlation $> 0.7$, they occupy the same bucket.
+$$Loss_{Bucket} = \sum (Exposure_i \cdot \text{Correlation Factor}_{ij})$$
 
 ---
 
-## 10. Liquidation Logic
+## 3. Maturity and Duration Matching (The "Safety Valve")
 
-Liquidations follow structured credit principles:
+To prevent systemic insolvency, Siprifi enforces a **Maturity Gap Constraint**. 
 
-- Only failing risk buckets are liquidated  
-- Liquidation priority respects maturity and seniority  
-- NO-share liquidations occur via native prediction markets  
+> **Protocol Rule:** The weighted average maturity of the protection sold (Junior Tranche) must always be shorter than the liquidation profile of the collateral (Senior Tranche).
 
-No cross-contamination between unrelated positions.
+$$T_{exp}(Protection) + \Delta t < T_{liq}(Collateral)$$
 
----
-
-## 11. Governance & Risk Control
-
-Governance controls:
-
-- Approved markets and share types  
-- Correlation group definitions  
-- Maturity constraints  
-- Credit capacity parameters  
-- Oracle selection  
-
-Risk parameters are adaptive, not static.
+This ensures that the protocol has a "time buffer" to resolve short-term event outcomes before the underlying long-term collateral can be significantly impaired by market volatility.
 
 ---
 
-## 12. Ecosystem Impact
+## 4. Economic Unit: sipUSD & NAV Accounting
 
-Siprifi enables:
+Siprifi operates as a **Non-Redeemable Closed-Loop System**. Value is tracked via **Net Asset Value (NAV)**.
 
-- Scalable protection markets  
-- Capital-efficient risk selling  
-- Institutional-grade risk structuring  
-- DeFi-native CDS-like products  
+### 4.1 System NAV Formula
+The protocol's real value is calculated at every oracle heartbeat:
 
-It bridges prediction markets with real financial risk infrastructure.
+$$NAV_{sys} = \frac{(A_{res} + \sum V_{shares} + P_{accrued}) - L_{total}}{S_{sipUSD}}$$
 
----
+Where:
+* $A_{res}$: Reserve Assets (ETH/USDC).
+* $V_{shares}$: Fair market value of active NO/YES shares held by the protocol.
+* $P_{accrued}$: Accumulated premiums from protection buyers.
+* $L_{total}$: Outstanding system liabilities.
+* $S_{sipUSD}$: Total supply of sipUSD.
 
-## 13. Conclusion
-
-Siprifi is not leverage.  
-Siprifi is not speculation.
-
-Siprifi is **structured decentralized credit**, built from prediction markets, governed by decorrelation, and constrained by maturity.
-
-It transforms isolated bets into a composable, solvent, and scalable risk market.
-
----
-
-## Disclaimer
-
-This document is for informational purposes only and does not constitute financial advice. Siprifi Finance is experimental and subject to change. Participation involves risk, including loss of principal.
+### 4.2 sipUSD as an Equity Proxy
+sipUSD is a **Residual Claim Token**. 
+* When a protection event **does not occur**, the "NO" shares expire worthless for the buyer, and the collateral is retained by the protocol.
+* This results in **NAV Accretion**, making each sipUSD represent a larger share of the protocol's ETH reserves.
 
 ---
 
-> **Proprietary Document — Copyright © 2026 Siprifi**  
-> All intellectual property rights, including architecture, formulas, diagrams, and risk logic, are exclusively owned by Siprifi.
+## 5. The Risk Waterfall (Loss Absorption)
+
+Siprifi utilizes a three-tier waterfall to protect senior participants:
+
+1. **First Loss Piece (Junior Tranche):** * Composed of users locking "NO" shares (Protection Sellers).
+   * Losses result in immediate **sipUSD dilution**.
+2. **Mezzanine (Protocol Reserve):** * A buffer funded by a percentage of all premiums ($P_{accrued}$).
+3. **Senior Tranche (ETH Backstop):** * The core ETH collateral. This layer is only touched if the Junior and Mezzanine layers are fully exhausted ($NAV_{sys} \to 0$).
+
+---
+
+## 6. Mathematical Liquidation Logic
+
+Liquidations are triggered when a Risk Bucket's potential loss exceeds the allocated Junior Tranche buffer.
+
+**Trigger Condition:**
+$$\frac{ECC}{V_{base}} < \text{Liquidation Threshold} (\gamma)$$
+
+When triggered, the SCE executes a **Targeted De-risking**:
+1. It identifies the Risk Bucket with the highest $B_k$.
+2. It auctions the shares of that specific bucket in the underlying prediction market (e.g., Polymarket/Augur).
+3. The proceeds are used to restore the $ECC$.
+
+---
+
+## 7. Strategic Advantages
+
+* **Capital Efficiency:** Enables users to "stack" uncorrelated risks on a single capital base.
+* **Risk Transformation:** Converts binary "bets" into institutional-grade credit instruments.
+* **Stability:** By eliminating the external peg of sipUSD, the protocol is immune to the "death spirals" seen in algorithmic stablecoins.
+
+---
+
+## 8. Conclusion
+
+Siprifi Finance represents the transition of DeFi from speculative gambling to **structured financial engineering**. By applying credit market principles—tranching, duration matching, and correlation analysis—to prediction markets, we unlock the most capital-efficient protection market in the ecosystem.
+
+---
+
+### Disclaimer
+Siprifi is a structured credit protocol involving high risk. Technical specifications are subject to governance updates.
+
+> **Proprietary Document — Copyright © 2026 Siprifi** > All intellectual property rights, including SCE formulas and sipUSD NAV logic, are exclusively owned by Siprifi.

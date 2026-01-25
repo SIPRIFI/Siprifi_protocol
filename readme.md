@@ -143,15 +143,15 @@ siprifi/
 │   ├── vision/
 │   │   ├── siprifi_thesis.pdf
 │   ├── protocol/
-│   │   ├── protocol_overview.md
+│   │   ├── SipUSD(credit_unit).md
 │   │   ├── technical_whitepaper.md
 │   │   ├── risk_management.md
 |   |   |── Structured_Credit_for_Binary_Risk_Market.pdf
 │   │   └── liquidation_and_oracles.md
 │   ├── economics/
-│   │   ├── protection_markets.md
-│   │   ├── capital_efficiency.md
-│   │   └── market_dynamics.md
+│   │   ├── CCP.md
+│   │   ├── CDS.md
+│   │   └── CLOs.md
 │   ├── governance/
 │   │   ├── governance_overview.md
 │   │   └── risk_parameters.md

@@ -32,7 +32,7 @@ It is a credit structuring engine for decentralized risk, designed to make on-ch
 The core of Siprifi is the **Structured Credit Engine (SCE)**, which manages the lifecycle of protection-selling positions.
 
 
-![Liquidation Mechanism](assets/No-as-collalteral.svg)
+![Liquidation Mechanism](../../assets/No-as-collalteral.svg)
 
 
 ### 2.1 The Credit Capacity Framework

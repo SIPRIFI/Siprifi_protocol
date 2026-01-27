@@ -112,14 +112,11 @@ $$
 
 Where:
 
-Where:
-
 - $A_{res}$ = senior collateral reserves  
 - $V_{NO}^{EBP}$ = loss-absorbing NO exposure after SCE constraints  
 - $F_{protocol}$ = protocol-owned buffers  
 - $L_{sys}$ = system-level obligations  
 - $S_{sipUSD}$ = total sipUSD supply  
-
 
 ---
 

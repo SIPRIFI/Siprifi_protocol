@@ -143,7 +143,7 @@ siprifi/
 │   ├── vision/
 │   │   ├── siprifi_thesis.pdf
 │   ├── protocol/
-│   │   ├── SipUSD(credit_unit).md
+│   │   ├── SipUSD.md
 │   │   ├── technical_whitepaper.md
 │   │   ├── risk_management.md
 |   |   |── Structured_Credit_for_Binary_Risk_Market.pdf

@@ -1,0 +1,193 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36 Edg/144.0.0.0" version="29.3.4">
+  <diagram name="Page-1" id="cbUe6v0z0nb51XWQMgHE">
+    <mxGraphModel dx="3009" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="TvlxAPK-serzROJOt9cg-1" parent="1" style="swimlane;whiteSpace=wrap;html=1;" value="Risk Layer Fees" vertex="1">
+          <mxGeometry height="495" width="730" x="-550" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-4" parent="TvlxAPK-serzROJOt9cg-1" style="swimlane;startSize=0;" value="" vertex="1">
+          <mxGeometry height="70" width="200" x="30" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-5" parent="TvlxAPK-serzROJOt9cg-4" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 23px;&quot;&gt;Protection Buyer&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="180" x="10" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-6" edge="1" parent="TvlxAPK-serzROJOt9cg-1" source="TvlxAPK-serzROJOt9cg-4" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="160" y="335" as="sourcePoint" />
+            <mxPoint x="130" y="295" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-7" parent="TvlxAPK-serzROJOt9cg-1" style="swimlane;startSize=0;" value="" vertex="1">
+          <mxGeometry height="70" width="200" x="280" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-8" parent="TvlxAPK-serzROJOt9cg-7" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 23px;&quot;&gt;Create Market&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="180" x="10" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-9" edge="1" parent="TvlxAPK-serzROJOt9cg-1" source="TvlxAPK-serzROJOt9cg-7" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="400" y="335" as="sourcePoint" />
+            <mxPoint x="380" y="295" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-10" parent="TvlxAPK-serzROJOt9cg-1" style="swimlane;startSize=0;" value="" vertex="1">
+          <mxGeometry height="70" width="200" x="510" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-11" parent="TvlxAPK-serzROJOt9cg-10" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 23px;&quot;&gt;Resolution&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="180" x="10" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-12" edge="1" parent="TvlxAPK-serzROJOt9cg-1" source="TvlxAPK-serzROJOt9cg-10" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="620" y="335" as="sourcePoint" />
+            <mxPoint x="610" y="295" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-13" parent="TvlxAPK-serzROJOt9cg-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;0.30% - 0.75%&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="140" x="60" y="307.5" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-14" parent="TvlxAPK-serzROJOt9cg-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;0.10% - 0.25%&lt;/font&gt;" vertex="1">
+          <mxGeometry height="45" width="130" x="315" y="305" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-15" parent="TvlxAPK-serzROJOt9cg-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;0.10% - 0.30%&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;(Only if there is payout)&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="45" width="130" x="545" y="312" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-2" parent="1" style="swimlane;whiteSpace=wrap;html=1;" value="Capital Layer" vertex="1">
+          <mxGeometry height="490" width="730" x="210" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-16" parent="TvlxAPK-serzROJOt9cg-2" style="swimlane;startSize=0;" value="" vertex="1">
+          <mxGeometry height="70" width="200" x="15" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-17" parent="TvlxAPK-serzROJOt9cg-16" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 23px;&quot;&gt;min sipUSD&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="180" x="10" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-18" edge="1" parent="TvlxAPK-serzROJOt9cg-2" source="TvlxAPK-serzROJOt9cg-16" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="145" y="335" as="sourcePoint" />
+            <mxPoint x="115" y="295" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-19" parent="TvlxAPK-serzROJOt9cg-2" style="swimlane;startSize=0;" value="" vertex="1">
+          <mxGeometry height="70" width="200" x="265" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-20" parent="TvlxAPK-serzROJOt9cg-19" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 23px;&quot;&gt;Duration Fee&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="180" x="10" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-21" edge="1" parent="TvlxAPK-serzROJOt9cg-2" source="TvlxAPK-serzROJOt9cg-19" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="385" y="335" as="sourcePoint" />
+            <mxPoint x="365" y="295" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-22" parent="TvlxAPK-serzROJOt9cg-2" style="swimlane;startSize=0;" value="" vertex="1">
+          <mxGeometry height="70" width="200" x="495" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-23" parent="TvlxAPK-serzROJOt9cg-22" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 23px;&quot;&gt;EBP Fee&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="180" x="10" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-24" edge="1" parent="TvlxAPK-serzROJOt9cg-2" source="TvlxAPK-serzROJOt9cg-22" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="605" y="335" as="sourcePoint" />
+            <mxPoint x="595" y="295" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-25" parent="TvlxAPK-serzROJOt9cg-2" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;0.20% Whales&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;0.50% Retail&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="140" x="45" y="307.5" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-26" parent="TvlxAPK-serzROJOt9cg-2" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;APR 2%-6%&lt;/font&gt;" vertex="1">
+          <mxGeometry height="45" width="130" x="300" y="305" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-27" parent="TvlxAPK-serzROJOt9cg-2" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;APR 1%-3%&lt;/font&gt;" vertex="1">
+          <mxGeometry height="45" width="130" x="530" y="307.5" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-41" parent="TvlxAPK-serzROJOt9cg-2" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;DurationFee = notional x APR x t&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="210" x="255" y="347.5" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-42" parent="TvlxAPK-serzROJOt9cg-2" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;EBPfee= notional x APR x t&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;span style=&quot;color: rgba(0, 0, 0, 0); font-family: monospace; font-size: 0px; text-align: start; text-wrap-mode: nowrap;&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20parent%3D%221%22%20style%3D%22text%3Bhtml%3D1%3BwhiteSpace%3Dwrap%3BstrokeColor%3Dnone%3BfillColor%3Dnone%3Balign%3Dcenter%3BverticalAlign%3Dmiddle%3Brounded%3D0%3B%22%20value%3D%22%26lt%3Bfont%20style%3D%26quot%3Bfont-size%3A%2014px%3B%26quot%3B%26gt%3BDurationFee%20%3D%20notional%20x%20APR%20x%20t%26lt%3B%2Ffont%26gt%3B%22%20vertex%3D%221%22%3E%3CmxGeometry%20height%3D%2230%22%20width%3D%22210%22%20x%3D%22465%22%20y%3D%22592.5%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;&lt;/font&gt;&lt;span style=&quot;color: rgba(0, 0, 0, 0); font-family: monospace; font-size: 0px; text-align: start; text-wrap-mode: nowrap; background-color: transparent;&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20parent%3D%221%22%20style%3D%22text%3Bhtml%3D1%3BwhiteSpace%3Dwrap%3BstrokeColor%3Dnone%3BfillColor%3Dnone%3Balign%3Dcenter%3BverticalAlign%3Dmiddle%3Brounded%3D0%3B%22%20value%3D%22%26lt%3Bfont%20style%3D%26quot%3Bfont-size%3A%2014px%3B%26quot%3B%26gt%3BDurationFee%20%3D%20notional%20x%20APR%20x%20t%26lt%3B%2Ffont%26gt%3B%22%20vertex%3D%221%22%3E%3CmxGeometry%20height%3D%2230%22%20width%3D%22210%22%20x%3D%22465%22%20y%3D%22592.5%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;EBP&lt;/font&gt;&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;font-family: &amp;quot;Segoe Sans Edge Text&amp;quot;, Roboto, Helvetica, sans-serif; text-align: start;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(217, 223, 251), rgb(255, 255, 255));&quot;&gt;&lt;span style=&quot;font-weight: 700; font-size: 18px;&quot;&gt;&amp;lt; &lt;/span&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;BBP&lt;/font&gt;&lt;/font&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="210" x="485" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-3" parent="1" style="swimlane;whiteSpace=wrap;html=1;" value="Tranches Fees" vertex="1">
+          <mxGeometry height="490" width="730" x="960" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-28" parent="1" style="swimlane;startSize=0;" value="" vertex="1">
+          <mxGeometry height="70" width="200" x="985" y="395" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-29" parent="TvlxAPK-serzROJOt9cg-28" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 23px;&quot;&gt;Junior Tranche Creation&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="180" x="10" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-30" edge="1" parent="1" source="TvlxAPK-serzROJOt9cg-28" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1115" y="575" as="sourcePoint" />
+            <mxPoint x="1085" y="535" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-31" parent="1" style="swimlane;startSize=0;" value="" vertex="1">
+          <mxGeometry height="70" width="200" x="1235" y="395" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-32" parent="TvlxAPK-serzROJOt9cg-31" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 23px;&quot;&gt;Rollover Fee&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="180" x="10" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-33" edge="1" parent="1" source="TvlxAPK-serzROJOt9cg-31" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1355" y="575" as="sourcePoint" />
+            <mxPoint x="1335" y="535" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-34" parent="1" style="swimlane;startSize=0;" value="" vertex="1">
+          <mxGeometry height="70" width="200" x="1465" y="395" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-35" parent="TvlxAPK-serzROJOt9cg-34" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 23px;&quot;&gt;Waterfall Fee&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="180" x="10" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-36" edge="1" parent="1" source="TvlxAPK-serzROJOt9cg-34" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1575" y="575" as="sourcePoint" />
+            <mxPoint x="1565" y="535" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-37" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;0.30% - 1%&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="140" x="1015" y="547.5" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-38" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;0.10% - 0.23%&lt;/font&gt;" vertex="1">
+          <mxGeometry height="45" width="130" x="1270" y="545" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-39" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;5% - 10%&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;(Only if event)&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="45" width="130" x="1500" y="547.5" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-52" parent="1" style="swimlane;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;PHASE 0&amp;nbsp;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="486" width="1240" x="-630" y="934" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-53" parent="TvlxAPK-serzROJOt9cg-52" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 25px;&quot;&gt;In this phase we dont seek for revenue.&amp;nbsp;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 25px;&quot;&gt;Instead we are looking for the behaivor of the platform.&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="590" x="360" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-54" parent="TvlxAPK-serzROJOt9cg-52" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 25px;&quot;&gt;&lt;u&gt;Fees to activate:&lt;/u&gt;&lt;/font&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;font-size: 25px;&quot;&gt;Protection Buyer fee (min)&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;font-size: 25px;&quot;&gt;Create Market fee (min)&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;font-size: 25px;&quot;&gt;Junior Tranche Creation fee (test)&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="610" x="330" y="206" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-55" parent="1" style="swimlane;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;PHASE 1&lt;/font&gt;" vertex="1">
+          <mxGeometry height="486" width="1260" x="-640" y="1490" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-56" parent="TvlxAPK-serzROJOt9cg-55" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 25px;&quot;&gt;In this phase we are looking for an economic validation.&amp;nbsp;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 25px;&quot;&gt;Looking if the system works properly in financial terms, and the fees are well adjusted.&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="590" x="360" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-57" parent="TvlxAPK-serzROJOt9cg-55" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 25px;&quot;&gt;&lt;u&gt;Fees to activate:&lt;/u&gt;&lt;/font&gt;&lt;div&gt;&lt;ul data-start=&quot;1845&quot; data-end=&quot;1981&quot;&gt;&lt;li data-start=&quot;1845&quot; data-end=&quot;1878&quot;&gt;&lt;p data-start=&quot;1847&quot; data-end=&quot;1878&quot;&gt;&lt;font style=&quot;font-size: 19px;&quot;&gt;Protection Buyer Fee (0.3–0.5%)&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;1879&quot; data-end=&quot;1910&quot;&gt;&lt;p data-start=&quot;1881&quot; data-end=&quot;1910&quot;&gt;&lt;font style=&quot;font-size: 19px;&quot;&gt;Create Market Fee (0.1–0.15%)&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;1911&quot; data-end=&quot;1944&quot;&gt;&lt;p data-start=&quot;1913&quot; data-end=&quot;1944&quot;&gt;&lt;font style=&quot;font-size: 19px;&quot;&gt;Resolution Fee (only if payout)&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;1945&quot; data-end=&quot;1981&quot;&gt;&lt;p data-start=&quot;1947&quot; data-end=&quot;1981&quot;&gt;&lt;font style=&quot;font-size: 19px;&quot;&gt;Junior Tranche Creation (0.3–0.5%&lt;/font&gt;)&lt;/p&gt;&lt;br&gt;&lt;/li&gt;&lt;br&gt;&lt;/ul&gt;&lt;br&gt;&lt;h3 data-start=&quot;1983&quot; data-end=&quot;2005&quot;&gt;&lt;/h3&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="610" x="40" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-58" parent="TvlxAPK-serzROJOt9cg-55" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 22px;&quot;&gt;&lt;u style=&quot;&quot;&gt;Key indicators:&lt;/u&gt;&lt;/font&gt;&lt;div&gt;&lt;li data-start=&quot;1011&quot; data-end=&quot;1032&quot;&gt;&lt;p data-start=&quot;1013&quot; data-end=&quot;1032&quot;&gt;&lt;font style=&quot;font-size: 22px;&quot;&gt;Premium Yield / NAV&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;1011&quot; data-end=&quot;1032&quot;&gt;&lt;p data-start=&quot;1013&quot; data-end=&quot;1032&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;font-size: 22px;&quot;&gt;Revenue / TVL&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;1049&quot; data-end=&quot;1074&quot;&gt;&lt;p data-start=&quot;1051&quot; data-end=&quot;1074&quot;&gt;&lt;font style=&quot;font-size: 22px;&quot;&gt;% revenue&amp;nbsp;&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;1049&quot; data-end=&quot;1074&quot;&gt;&lt;p data-start=&quot;1051&quot; data-end=&quot;1074&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;font-size: 22px;&quot;&gt;% premiums&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;1415&quot; data-end=&quot;1439&quot;&gt;&lt;p data-start=&quot;1417&quot; data-end=&quot;1439&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Capital Turnover Ratio&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;1440&quot; data-end=&quot;1463&quot;&gt;&lt;p data-start=&quot;1442&quot; data-end=&quot;1463&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;% protección renovada&lt;/font&gt;&lt;span style=&quot;font-size: 22px; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="510" x="789" y="274" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-59" parent="1" style="swimlane;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;PHASE 2&lt;/font&gt;" vertex="1">
+          <mxGeometry height="486" width="1260" x="690" y="934" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-60" parent="TvlxAPK-serzROJOt9cg-59" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 25px;&quot;&gt;In this phase we begin to increase revenue and users.&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 25px;&quot;&gt;Looking the ways to optimize the revenue channels.&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="590" x="360" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-61" parent="TvlxAPK-serzROJOt9cg-59" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 25px;&quot;&gt;&lt;u&gt;Fees to activate:&lt;/u&gt;&lt;/font&gt;&lt;div&gt;&lt;ul data-start=&quot;1845&quot; data-end=&quot;1981&quot;&gt;&lt;li data-start=&quot;1845&quot; data-end=&quot;1878&quot;&gt;&lt;p data-start=&quot;1847&quot; data-end=&quot;1878&quot;&gt;&lt;font style=&quot;font-size: 21px;&quot;&gt;Protection Buyer Fee (0.3–0.5%)&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;1879&quot; data-end=&quot;1910&quot;&gt;&lt;p data-start=&quot;1881&quot; data-end=&quot;1910&quot;&gt;&lt;font style=&quot;font-size: 21px;&quot;&gt;Create Market Fee (0.1–0.15%)&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;1911&quot; data-end=&quot;1944&quot;&gt;&lt;p data-start=&quot;1913&quot; data-end=&quot;1944&quot;&gt;&lt;font style=&quot;font-size: 21px;&quot;&gt;Resolution Fee (only if payout)&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;1945&quot; data-end=&quot;1981&quot;&gt;&lt;p data-start=&quot;1947&quot; data-end=&quot;1981&quot;&gt;&lt;font style=&quot;font-size: 21px;&quot;&gt;&lt;font style=&quot;&quot;&gt;Junior Tranche Creation (0.3–0.5%&lt;/font&gt;)&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;1945&quot; data-end=&quot;1981&quot;&gt;&lt;p data-start=&quot;1947&quot; data-end=&quot;1981&quot; style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: 21px; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Duration Fee(APR fee)&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;1945&quot; data-end=&quot;1981&quot;&gt;&lt;p data-start=&quot;1947&quot; data-end=&quot;1981&quot; style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 21px;&quot;&gt;EBP Fee(APR fee)&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;1945&quot; data-end=&quot;1981&quot;&gt;&lt;p data-start=&quot;1947&quot; data-end=&quot;1981&quot; style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 21px;&quot;&gt;Rollover Fee(0.10% - 0.23%)&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;br&gt;&lt;/ul&gt;&lt;br&gt;&lt;h3 data-start=&quot;1983&quot; data-end=&quot;2005&quot;&gt;&lt;/h3&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="610" y="296" as="geometry" />
+        </mxCell>
+        <mxCell id="TvlxAPK-serzROJOt9cg-62" parent="TvlxAPK-serzROJOt9cg-59" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 22px;&quot;&gt;&lt;u style=&quot;&quot;&gt;Key indicators:&lt;/u&gt;&lt;/font&gt;&lt;div&gt;&lt;li data-start=&quot;1011&quot; data-end=&quot;1032&quot;&gt;&lt;p data-start=&quot;1013&quot; data-end=&quot;1032&quot;&gt;&lt;font style=&quot;font-size: 22px;&quot;&gt;Premium Yield / NAV&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;1011&quot; data-end=&quot;1032&quot;&gt;&lt;p data-start=&quot;1013&quot; data-end=&quot;1032&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;font-size: 22px;&quot;&gt;Revenue / TVL&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;1049&quot; data-end=&quot;1074&quot;&gt;&lt;p data-start=&quot;1051&quot; data-end=&quot;1074&quot;&gt;&lt;font style=&quot;font-size: 22px;&quot;&gt;% revenue&amp;nbsp;&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;1049&quot; data-end=&quot;1074&quot;&gt;&lt;p data-start=&quot;1051&quot; data-end=&quot;1074&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;font-size: 22px;&quot;&gt;% premiums&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;1415&quot; data-end=&quot;1439&quot;&gt;&lt;p data-start=&quot;1417&quot; data-end=&quot;1439&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Capital Turnover Ratio&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;1440&quot; data-end=&quot;1463&quot;&gt;&lt;p data-start=&quot;1442&quot; data-end=&quot;1463&quot;&gt;&lt;span style=&quot;font-size: 18px; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Revenue / NAV&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;1440&quot; data-end=&quot;1463&quot;&gt;&lt;p data-start=&quot;1442&quot; data-end=&quot;1463&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Revenue per Unit of Risk (RUR)&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;1440&quot; data-end=&quot;1463&quot;&gt;&lt;p data-start=&quot;1442&quot; data-end=&quot;1463&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Recurring Revenue Ratio&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;1440&quot; data-end=&quot;1463&quot;&gt;&lt;p data-start=&quot;1442&quot; data-end=&quot;1463&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Fee Mix Concentration&lt;/font&gt;&lt;/p&gt;&lt;/li&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="510" x="789" y="274" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

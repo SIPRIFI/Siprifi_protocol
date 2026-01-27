@@ -95,19 +95,7 @@ sipUSD is backed **only** by assets that can absorb losses under protocol rules.
 ## 6. NAV Formula (Siprifi-Accurate)
 
 $$
-NAV_{sys}
-=
-\frac{
-A_{res}
-+
-V_{NO}^{EBP}
-+
-F_{protocol}
--
-L_{sys}
-}{
-S_{sipUSD}
-}
+NAV_{sys} = (A_{res} + V_{NO}^{EBP} + F_{protocol} - L_{sys}) / S_{sipUSD}
 $$
 
 Where:

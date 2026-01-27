@@ -94,29 +94,32 @@ sipUSD is backed **only** by assets that can absorb losses under protocol rules.
 
 ## 6. NAV Formula (Siprifi-Accurate)
 
-\[
+$$
 NAV_{sys}
 =
 \frac{
 A_{res}
-\;+\;
++
 V_{NO}^{EBP}
-\;+\;
++
 F_{protocol}
-\;-\;
+-
 L_{sys}
 }{
 S_{sipUSD}
 }
-\]
+$$
 
 Where:
 
-- \(A_{res}\) = senior collateral reserves  
-- \(V_{NO}^{EBP}\) = loss-absorbing NO exposure after SCE constraints  
-- \(F_{protocol}\) = protocol-owned buffers  
-- \(L_{sys}\) = system-level obligations  
-- \(S_{sipUSD}\) = total sipUSD supply  
+Where:
+
+- $A_{res}$ = senior collateral reserves  
+- $V_{NO}^{EBP}$ = loss-absorbing NO exposure after SCE constraints  
+- $F_{protocol}$ = protocol-owned buffers  
+- $L_{sys}$ = system-level obligations  
+- $S_{sipUSD}$ = total sipUSD supply  
+
 
 ---
 

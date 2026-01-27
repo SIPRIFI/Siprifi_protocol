@@ -76,10 +76,11 @@ sipUSD is backed **only** by assets that can absorb losses under protocol rules.
 ### Included in NAV
 
 | Component | Description |
-|----|----|
-| \(A_{res}\) | Strong collateral (ETH / USDC) |
-| \(V_{NO}^{EBP}\) | EBP-qualified NO exposure (discounted, correlated, duration-adjusted) |
-| \(F_{protocol}\) | Protocol-retained fees / buffers |
+|-----------|-------------|
+| $A_{res}$ | Strong collateral (ETH / USDC) |
+| $V_{NO}^{EBP}$ | EBP-qualified NO exposure (discounted, correlated, duration-adjusted) |
+| $F_{protocol}$ | Protocol-retained fees / buffers |
+
 
 ### Excluded from NAV
 
@@ -114,9 +115,9 @@ sipUSD does **not** promise redemption.
 
 Its **fair value** is:
 
-\[
+$$
 Price_{sipUSD} \approx NAV_{sys}
-\]
+$$
 
 Market prices may deviate, but:
 - **Minting**

@@ -161,6 +161,7 @@ siprifi/
 │   │   ├── SipUSD.md
 │   │   ├── technical_whitepaper.md
 │   │   ├── risk_management.md
+|   |   |── Structured_credit_tranching_waterfall.md
 |   |   |── Structured_Credit_for_Binary_Risk_Market.pdf
 │   │   └── liquidation_and_oracles.md
 │   ├── economics/
